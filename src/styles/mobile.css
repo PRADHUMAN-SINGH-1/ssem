@@ -99,54 +99,100 @@
 @media (max-width: 480px) {
   :root { --mobile-gutter: 16px; }
   .container { width: min(100%, calc(100% - (2 * var(--mobile-gutter)))); }
+
+  /* MOBILE HOME HERO ONLY
+     The desktop hero is untouched. On phones the complete information
+     block sits as a compact lower-left column and enters from the left. */
   .hero__container {
-    padding-top: calc(68px + env(safe-area-inset-top) + 16px);
-    padding-bottom: 24px;
+    align-items: flex-end;
+    padding-top: calc(68px + env(safe-area-inset-top) + 12px);
+    padding-bottom: 92px;
   }
 
-  /* Mobile home hero only: compact, left-aligned and visually contained. */
   .hero__content {
-    width: calc(100% - 24px);
-    max-width: 350px;
-    margin-left: 12px;
+    width: calc(100% - 32px);
+    max-width: 330px;
+    margin-left: 16px;
     margin-right: auto;
-    transform: none;
+    transform: translateX(-42px);
+    opacity: 0;
+    animation: ssemMobileHeroSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
   }
 
+  /* Keep the original orange —+ accent intact and prevent it from
+     wrapping into separate lines on narrow screens. */
   .hero__eyebrow-wrap {
     width: 100%;
     max-width: 330px;
-    margin-bottom: 14px;
-    gap: 7px;
+    margin-bottom: 12px;
+    gap: 8px;
+    align-items: center;
+  }
+  .hero__eyebrow-accent {
+    flex: 0 0 auto;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.05rem;
+    line-height: 1;
   }
   .hero__eyebrow-text {
-    max-width: 300px;
-    font-size: 0.72rem;
-    letter-spacing: 0.07em;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 0.7rem;
+    letter-spacing: 0.065em;
     line-height: 1.35;
   }
 
   .hero__headline {
-    max-width: 340px;
-    font-size: clamp(1.82rem, 8.4vw, 2.12rem);
+    max-width: 330px;
+    font-size: clamp(1.78rem, 8.2vw, 2.08rem);
     line-height: 1.08;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
+
   .hero__description {
-    max-width: 340px;
-    font-size: 0.98rem;
+    max-width: 325px;
+    font-size: 0.94rem;
     line-height: 1.48;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
-  .hero__actions { width: 100%; gap: 9px; }
+
+  .hero__actions {
+    width: 100%;
+    gap: 8px;
+  }
   .hero__btn-primary,
-  .hero__btn-secondary { min-height: 50px; padding: 11px 16px; }
+  .hero__btn-secondary {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 14px;
+  }
+}
+
+@keyframes ssemMobileHeroSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-42px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__content {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 360px) {
   :root { --mobile-gutter: 14px; }
-  .hero__content { width: calc(100% - 18px); margin-left: 9px; }
-  .hero__eyebrow-text { font-size: 0.68rem; }
-  .hero__headline { max-width: 310px; font-size: 1.7rem; }
-  .hero__description { max-width: 310px; font-size: 0.94rem; }
+  .hero__content { width: calc(100% - 28px); margin-left: 14px; max-width: 310px; }
+  .hero__eyebrow-text { font-size: 0.66rem; }
+  .hero__headline { max-width: 305px; font-size: 1.66rem; }
+  .hero__description { max-width: 300px; font-size: 0.9rem; }
 }
