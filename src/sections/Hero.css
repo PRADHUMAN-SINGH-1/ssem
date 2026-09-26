@@ -97,7 +97,7 @@
   .hero__poster,.hero__video { object-position:74% center; }
   .hero__overlay { background:linear-gradient(180deg,rgba(14,18,22,.9) 0%,rgba(14,18,22,.6) 42%,rgba(14,18,22,.82) 100%); }
 
-  /* Mobile information block only: lower-right and deliberately extending into the white section. */
+  /* Mobile information block: right side, beginning around the lower truck/tire area. */
   .hero__container {
     position:absolute;
     inset:0;
@@ -112,7 +112,7 @@
 
   .hero__content {
     position:relative;
-    top:300px;
+    top:410px;
     width:min(47%,340px);
     max-width:340px;
     margin:0;
@@ -131,7 +131,7 @@
   .hero__actions { flex-direction:column; align-items:stretch; gap:6px; width:100%; }
   .hero__btn-primary { width:100%; min-height:38px; padding:7px 9px; font-size:.77rem; border-radius:8px; box-sizing:border-box; }
 
-  /* iPhone-style glass Contact Us, now sitting over the white section. */
+  /* iPhone-style glass Contact Us, extending into the white section. */
   .hero__btn-secondary {
     width:100%;
     min-height:38px;
@@ -154,7 +154,7 @@
   .hero { padding-top:calc(var(--header-height,80px) + var(--space-md)); padding-bottom:var(--space-2xl); }
   .hero__poster,.hero__video { object-position:74% center; }
   .hero__container { padding-left:6%; padding-right:6%; padding-bottom:34px; }
-  .hero__content { width:min(49%,315px); max-width:315px; top:300px; }
+  .hero__content { width:min(49%,315px); max-width:315px; top:410px; }
   .hero__eyebrow-text { font-size:.51rem; letter-spacing:.03em; }
   .hero__headline { font-size:1.3rem; line-height:1.03; margin-bottom:8px; }
   .hero__description { font-size:.69rem; line-height:1.3; margin-bottom:10px; }
