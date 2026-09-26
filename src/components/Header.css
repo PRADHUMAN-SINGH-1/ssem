@@ -187,6 +187,10 @@
 /* ─── Responsive Breakpoints ─────────────────────────────────── */
 
 @media (max-width: 900px) {
+  .header {
+    height: 72px;
+  }
+
   .header__nav {
     display: none;
   }
@@ -197,6 +201,14 @@
 }
 
 @media (max-width: 480px) {
+  .header__logo img {
+    height: 34px;
+  }
+
+  .header__hamburger {
+    padding: 8px;
+  }
+
   .header__cta-btn {
     display: none; /* Show in mobile drawer to save header space */
   }
