@@ -143,8 +143,6 @@ body {
 .stagger-5 { transition-delay: 0.33s; }
 .stagger-6 { transition-delay: 0.40s; }
 
-
-
 /* Pulsing beacon for ongoing operations badge */
 .status-badge.status--ongoing {
   display: inline-flex;
@@ -202,6 +200,59 @@ body {
 
   .container {
     padding: 0 var(--space-lg);
+  }
+
+  /* Mobile layout hardening: keep every section inside the viewport
+     without changing the desktop design or component content. */
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  main,
+  header,
+  footer,
+  section,
+  .container,
+  .section {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .container > *,
+  .section > *,
+  .section__header > *,
+  [class*="__grid"] > *,
+  [class*="__inner"] > * {
+    min-width: 0;
+  }
+
+  img,
+  video,
+  svg,
+  canvas {
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    max-width: 100%;
+  }
+
+  .section__title,
+  .section__description,
+  p,
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    overflow-wrap: anywhere;
   }
 }
 
