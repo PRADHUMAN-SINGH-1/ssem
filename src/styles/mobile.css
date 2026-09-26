@@ -6,32 +6,18 @@
 
 @media (max-width: 768px) {
   :root { --mobile-gutter: 20px; }
-
   html { scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
   body { width: 100%; min-width: 0; overflow-x: hidden; }
   #root { width: 100%; min-width: 0; overflow-x: clip; }
-
-  .container {
-    width: min(100%, calc(100% - (2 * var(--mobile-gutter))));
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .header {
-    height: calc(72px + env(safe-area-inset-top));
-    padding-top: env(safe-area-inset-top);
-  }
+  .container { width: min(100%, calc(100% - (2 * var(--mobile-gutter)))); padding-left: 0; padding-right: 0; }
+  .header { height: calc(72px + env(safe-area-inset-top)); padding-top: env(safe-area-inset-top); }
   .header__inner { min-height: 72px; }
   .header__logo img { max-height: 38px; width: auto; }
   .header__hamburger { flex-shrink: 0; }
 
-  .hero {
-    min-height: 100svh;
-    align-items: flex-start;
-  }
+  .hero { min-height: 100svh; align-items: flex-start; }
 
-  /* Mobile-only hero composition: keep the full truck visible and place the
-     complete information block in the lower-right area. Desktop/laptop is untouched. */
+  /* Mobile-only hero composition. Desktop/laptop is untouched. */
   .hero__container {
     width: 100%;
     min-height: 100svh;
@@ -41,110 +27,33 @@
     align-items: flex-end;
     justify-content: flex-end;
     box-sizing: border-box;
-    padding: 0 10px calc(72px + env(safe-area-inset-bottom));
+    padding: 0 10px calc(54px + env(safe-area-inset-bottom));
     pointer-events: none;
   }
-
   .hero__content {
-    width: min(46%, 230px);
-    max-width: 230px;
+    width: min(48%, 320px);
+    max-width: 320px;
     margin: 0;
     padding: 0;
     text-align: left;
     pointer-events: auto;
     animation: ssemMobileHeroSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
   }
+  .hero__eyebrow-wrap { width: 100%; max-width: 100%; margin-bottom: 6px; gap: 4px; align-items: center; }
+  .hero__eyebrow-accent { flex: 0 0 auto; display: inline-block; white-space: nowrap; font-size: 0.7rem; line-height: 1; }
+  .hero__eyebrow-text { flex: 1 1 auto; min-width: 0; max-width: 100%; font-size: clamp(0.52rem, 1.8vw, 0.64rem); letter-spacing: 0.02em; line-height: 1.12; }
+  .hero__headline { max-width: 100%; font-size: clamp(1.18rem, 4.7vw, 1.42rem); line-height: 1.02; margin-bottom: 7px; }
+  .hero__description { max-width: 100%; font-size: clamp(0.64rem, 2.45vw, 0.76rem); line-height: 1.25; margin-bottom: 8px; }
+  .hero__actions { width: 100%; gap: 4px; }
+  .hero__btn-primary, .hero__btn-secondary { width: 100%; min-height: 34px; padding: 5px 8px; font-size: clamp(0.67rem, 2.45vw, 0.76rem); border-radius: 7px; }
 
-  .hero__eyebrow-wrap {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 7px;
-    gap: 5px;
-    align-items: center;
-  }
-  .hero__eyebrow-accent {
-    flex: 0 0 auto;
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 0.76rem;
-    line-height: 1;
-  }
-  .hero__eyebrow-text {
-    flex: 1 1 auto;
-    min-width: 0;
-    max-width: 100%;
-    font-size: clamp(0.54rem, 2.05vw, 0.68rem);
-    letter-spacing: 0.025em;
-    line-height: 1.15;
-  }
-
-  .hero__headline {
-    max-width: 100%;
-    font-size: clamp(1.28rem, 5.2vw, 1.55rem);
-    line-height: 1.02;
-    margin-bottom: 9px;
-  }
-
-  .hero__description {
-    max-width: 100%;
-    font-size: clamp(0.67rem, 2.75vw, 0.8rem);
-    line-height: 1.28;
-    margin-bottom: 10px;
-  }
-
-  .hero__actions {
-    width: 100%;
-    gap: 5px;
-  }
-  .hero__btn-primary,
-  .hero__btn-secondary {
-    width: 100%;
-    min-height: 36px;
-    padding: 6px 8px;
-    font-size: clamp(0.7rem, 2.7vw, 0.8rem);
-    border-radius: 7px;
-  }
-
-  .about-split,
-  .services__grid,
-  .capabilities__grid,
-  .project-status__stats,
-  .contact__grid,
-  .pre-footer-cta__box,
-  .footer__inner { width: 100%; min-width: 0; }
-
-  .about-split__content,
-  .about-split__media,
-  .contact__info,
-  .contact-form,
-  .pre-footer-cta__box,
-  .stat-card,
-  .capability-item,
-  .service-card,
-  .gallery-card { min-width: 0; max-width: 100%; }
-
+  .about-split, .services__grid, .capabilities__grid, .project-status__stats, .contact__grid, .pre-footer-cta__box, .footer__inner { width: 100%; min-width: 0; }
+  .about-split__content, .about-split__media, .contact__info, .contact-form, .pre-footer-cta__box, .stat-card, .capability-item, .service-card, .gallery-card { min-width: 0; max-width: 100%; }
   button, a, select, input, textarea { touch-action: manipulation; }
 
-  .mobile-menu {
-    padding-top: calc(88px + env(safe-area-inset-top));
-    padding-bottom: calc(32px + env(safe-area-inset-bottom));
-  }
+  .mobile-menu { padding-top: calc(88px + env(safe-area-inset-top)); padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
 
-  .mobile-menu__close {
-    display: flex !important;
-    top: calc(18px + env(safe-area-inset-top));
-    right: 18px;
-    width: 42px;
-    height: 42px;
-    z-index: 110;
-  }
-
-  .gallery-modal {
-    padding: max(10px, env(safe-area-inset-top))
-             max(10px, env(safe-area-inset-right))
-             max(10px, env(safe-area-inset-bottom))
-             max(10px, env(safe-area-inset-left));
-  }
+  .gallery-modal { padding: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left)); }
   .gallery-modal__dialog { width: 100%; max-width: 100%; max-height: calc(100svh - 20px); }
   .gallery-modal__top-nav { padding-left: 12px; padding-right: 12px; }
   .gallery-modal__caption-bar { padding-left: 16px; padding-right: 16px; }
@@ -155,13 +64,8 @@
   :root { --mobile-gutter: 16px; }
   .container { width: min(100%, calc(100% - (2 * var(--mobile-gutter)))); }
 
-  /* MOBILE HOME HERO ONLY
-     Compact lower-right information composition.
-     Desktop/laptop styles are untouched. */
-  .hero {
-    min-height: 78svh;
-  }
-
+  /* MOBILE HOME HERO ONLY: lower-right, from the truck/tire line toward the right edge. */
+  .hero { min-height: 78svh; }
   .hero__container {
     min-height: 78svh;
     position: absolute;
@@ -169,103 +73,44 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    padding: 0 10px 34px;
+    padding: 0 8px 42px;
   }
-
   .hero__content {
     position: static;
-    width: min(46%, 230px);
-    max-width: 230px;
+    width: min(48%, 320px);
+    max-width: 320px;
     margin: 0;
-    transform: translateX(-42px);
+    transform: translateX(-4px);
     opacity: 0;
     animation: ssemMobileHeroSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
   }
+  .hero__eyebrow-wrap { width: 100%; max-width: 100%; margin-bottom: 6px; gap: 4px; align-items: center; }
+  .hero__eyebrow-accent { flex: 0 0 auto; display: inline-block; white-space: nowrap; font-size: 0.7rem; line-height: 1; }
+  .hero__eyebrow-text { flex: 1 1 auto; min-width: 0; max-width: 100%; font-size: clamp(0.52rem, 1.8vw, 0.64rem); letter-spacing: 0.02em; line-height: 1.12; }
+  .hero__headline { max-width: 100%; font-size: clamp(1.18rem, 4.7vw, 1.42rem); line-height: 1.02; margin-bottom: 7px; }
+  .hero__description { max-width: 100%; font-size: clamp(0.64rem, 2.45vw, 0.76rem); line-height: 1.25; margin-bottom: 8px; }
+  .hero__actions { width: 100%; gap: 4px; }
+  .hero__btn-primary, .hero__btn-secondary { width: 100%; min-height: 34px; padding: 5px 8px; font-size: clamp(0.67rem, 2.45vw, 0.76rem); border-radius: 7px; }
 
-  .hero__eyebrow-wrap {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 7px;
-    gap: 5px;
-    align-items: center;
-  }
-  .hero__eyebrow-accent {
-    flex: 0 0 auto;
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 0.76rem;
-    line-height: 1;
-  }
-  .hero__eyebrow-text {
-    flex: 1 1 auto;
-    min-width: 0;
-    max-width: 100%;
-    font-size: clamp(0.54rem, 2.05vw, 0.68rem);
-    letter-spacing: 0.025em;
-    line-height: 1.15;
-  }
-
-  .hero__headline {
-    max-width: 100%;
-    font-size: clamp(1.28rem, 5.2vw, 1.55rem);
-    line-height: 1.02;
-    margin-bottom: 9px;
-  }
-
-  .hero__description {
-    max-width: 100%;
-    font-size: clamp(0.67rem, 2.75vw, 0.8rem);
-    line-height: 1.28;
-    margin-bottom: 10px;
-  }
-
-  .hero__actions {
-    width: 100%;
-    gap: 5px;
-  }
-  .hero__btn-primary,
-  .hero__btn-secondary {
-    width: 100%;
-    min-height: 36px;
-    padding: 6px 8px;
-    font-size: clamp(0.7rem, 2.7vw, 0.8rem);
-  }
-
-  /* Mobile-only crop: preserve the truck framing from the reference image. */
-  .hero__poster,
-  .hero__video {
-    object-position: 74% center;
-  }
+  /* Mobile-only crop: preserve the truck framing. */
+  .hero__poster, .hero__video { object-position: 74% center; }
 }
 
 @keyframes ssemMobileHeroSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-42px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-42px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__content {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
+  .hero__content { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
 @media (max-width: 360px) {
   :root { --mobile-gutter: 14px; }
   .hero { min-height: 78svh; }
-  .hero__container { min-height: 78svh; padding: 0 8px 30px; }
-  .hero__content {
-    width: min(46%, 205px);
-    max-width: 205px;
-  }
-  .hero__eyebrow-text { font-size: 0.52rem; }
-  .hero__headline { max-width: 100%; font-size: 1.25rem; }
-  .hero__description { max-width: 100%; font-size: 0.65rem; }
+  .hero__container { min-height: 78svh; padding: 0 7px 34px; }
+  .hero__content { width: min(50%, 285px); max-width: 285px; }
+  .hero__eyebrow-text { font-size: 0.5rem; }
+  .hero__headline { max-width: 100%; font-size: 1.18rem; }
+  .hero__description { max-width: 100%; font-size: 0.63rem; }
 }
