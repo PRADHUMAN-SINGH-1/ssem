@@ -22,6 +22,16 @@ Official website and digital operations portal for **Shree Shyam Earthmovers LLP
 
 ---
 
+## 📱 Latest Mobile Homepage Update
+
+- The mobile homepage hero information block is positioned as a compact lower-right composition so the truck front remains visible.
+- The `—+` eyebrow, headline, description, **Explore Our Fleet**, and **Contact Us** controls move together as one block.
+- Mobile hero content retains the left-to-right entrance animation.
+- The mobile navigation drawer has an explicit visible close (`X`) control.
+- These changes are scoped to mobile breakpoints; laptop/desktop styling is unchanged.
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
