@@ -106,7 +106,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   padding: 10px 24px;
-  border-radius: 9999px; /* Pill shape */
+  border-radius: 9999px;
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   white-space: nowrap;
@@ -203,5 +203,25 @@
 
   .header__cta-btn--mobile {
     display: inline-flex;
+  }
+
+  /* Mobile-only: keep the close control above the drawer. */
+  .header.header--menu-open {
+    z-index: 102;
+    background: transparent;
+    box-shadow: none;
+    border-bottom: none;
+  }
+
+  .header--menu-open .header__logo {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .header__hamburger--open {
+    position: relative;
+    z-index: 103;
+    color: #ffffff;
+    background: transparent;
   }
 }
