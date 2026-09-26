@@ -30,8 +30,8 @@
     align-items: flex-start;
   }
 
-  /* Mobile-only hero composition: keep the truck visible and place the full
-     information block in the lower-right area. Desktop/laptop is untouched. */
+  /* Mobile-only hero composition: keep the full truck visible and place the
+     complete information block in the lower-right area. Desktop/laptop is untouched. */
   .hero__container {
     width: 100%;
     min-height: 100svh;
@@ -41,12 +41,12 @@
     align-items: flex-end;
     justify-content: flex-end;
     box-sizing: border-box;
-    padding: 0 18px calc(88px + env(safe-area-inset-bottom));
+    padding: 0 10px calc(72px + env(safe-area-inset-bottom));
     pointer-events: none;
   }
 
   .hero__content {
-    width: min(54%, 230px);
+    width: min(46%, 230px);
     max-width: 230px;
     margin: 0;
     padding: 0;
@@ -169,12 +169,12 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    padding: 0 14px 58px;
+    padding: 0 10px 34px;
   }
 
   .hero__content {
     position: static;
-    width: min(54%, 230px);
+    width: min(46%, 230px);
     max-width: 230px;
     margin: 0;
     transform: translateX(-42px);
@@ -260,9 +260,9 @@
 @media (max-width: 360px) {
   :root { --mobile-gutter: 14px; }
   .hero { min-height: 78svh; }
-  .hero__container { min-height: 78svh; padding: 0 12px 50px; }
+  .hero__container { min-height: 78svh; padding: 0 8px 30px; }
   .hero__content {
-    width: min(56%, 205px);
+    width: min(46%, 205px);
     max-width: 205px;
   }
   .hero__eyebrow-text { font-size: 0.52rem; }
