@@ -45,7 +45,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
+    <header className={`header ${scrolled ? 'header--scrolled' : ''} ${mobileOpen ? 'header--menu-open' : ''}`}>
       <div className="header__inner container">
         <a href="#" className="header__logo" aria-label={`${company.name} — Home`}>
           <img src={logo} alt={`${company.name} logo`} />
