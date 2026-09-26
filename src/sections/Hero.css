@@ -257,7 +257,7 @@
     padding-bottom: var(--space-2xl);
   }
 
-  /* Keep the truck framing unchanged on mobile. */
+  /* Keep the existing truck framing unchanged on mobile. */
   .hero__poster,
   .hero__video {
     object-position: 74% center;
@@ -272,75 +272,72 @@
     );
   }
 
-  /* Mobile-only: compact information block on the lower-right dark area. */
+  /* Mobile-only: lower-right information placement. No card/panel/background. */
   .hero__container {
+    position: absolute;
+    inset: 0;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: calc(var(--header-height, 80px) + 10px) 18px 72px;
+    padding: 0 18px 92px;
+    pointer-events: none;
   }
 
   .hero__content {
-    width: min(64%, 360px);
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: 34vh;
+    width: min(70%, 350px);
+    max-width: 350px;
+    margin: 0;
+    padding: 0;
     text-align: left;
-    padding: 14px 14px 16px;
-    border-radius: 14px;
-    background: linear-gradient(
-      180deg,
-      rgba(8, 11, 14, 0.52),
-      rgba(8, 11, 14, 0.72)
-    );
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    pointer-events: auto;
     animation: heroMobileSlideIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .hero__eyebrow-wrap {
     gap: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .hero__eyebrow-accent {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
   }
 
   .hero__eyebrow-text {
-    font-size: 0.62rem;
-    letter-spacing: 0.06em;
-    line-height: 1.25;
+    font-size: 0.59rem;
+    letter-spacing: 0.045em;
+    line-height: 1.2;
   }
 
   .hero__headline {
-    font-size: clamp(1.55rem, 5.6vw, 2rem);
-    line-height: 1.06;
+    font-size: clamp(1.45rem, 5vw, 1.85rem);
+    line-height: 1.05;
     letter-spacing: -0.02em;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .hero__description {
-    font-size: 0.82rem;
-    line-height: 1.4;
-    margin-bottom: 14px;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    margin-bottom: 12px;
     max-width: none;
   }
 
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
+    gap: 7px;
     width: 100%;
   }
 
   .hero__btn-primary,
   .hero__btn-secondary {
     width: 100%;
-    min-height: 42px;
-    padding: 9px 12px;
-    font-size: 0.84rem;
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 0.8rem;
     border-radius: 8px;
   }
 }
@@ -359,36 +356,35 @@
   .hero__container {
     padding-left: 14px;
     padding-right: 14px;
-    padding-bottom: 64px;
+    padding-bottom: 84px;
   }
 
   .hero__content {
-    width: min(68%, 330px);
-    margin-top: 38vh;
-    padding: 12px 12px 14px;
+    width: min(72%, 330px);
+    max-width: 330px;
   }
 
   .hero__eyebrow-text {
-    font-size: 0.58rem;
-    letter-spacing: 0.045em;
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
   }
 
   .hero__headline {
-    font-size: 1.52rem;
-    line-height: 1.05;
-    margin-bottom: 10px;
+    font-size: 1.45rem;
+    line-height: 1.04;
+    margin-bottom: 9px;
   }
 
   .hero__description {
-    font-size: 0.76rem;
-    line-height: 1.35;
-    margin-bottom: 12px;
+    font-size: 0.74rem;
+    line-height: 1.32;
+    margin-bottom: 11px;
   }
 
   .hero__btn-primary,
   .hero__btn-secondary {
-    min-height: 40px;
-    padding: 8px 10px;
-    font-size: 0.8rem;
+    min-height: 38px;
+    padding: 7px 9px;
+    font-size: 0.78rem;
   }
 }
