@@ -29,37 +29,80 @@
     min-height: 100svh;
     align-items: flex-start;
   }
+
+  /* Mobile-only hero composition: keep the truck visible and place the full
+     information block in the lower-right area. Desktop/laptop is untouched. */
   .hero__container {
     width: 100%;
     min-height: 100svh;
+    position: absolute;
+    inset: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: flex-end;
     box-sizing: border-box;
-    padding-top: calc(72px + env(safe-area-inset-top) + 20px);
-    padding-bottom: 28px;
+    padding: 0 18px calc(88px + env(safe-area-inset-bottom));
+    pointer-events: none;
   }
-  .hero__content { width: 100%; max-width: 100%; }
-  .hero__eyebrow-wrap { max-width: 100%; margin-bottom: 16px; }
-  .hero__eyebrow-text { max-width: calc(100vw - 76px); }
+
+  .hero__content {
+    width: min(54%, 230px);
+    max-width: 230px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    pointer-events: auto;
+    animation: ssemMobileHeroSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+  }
+
+  .hero__eyebrow-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 7px;
+    gap: 5px;
+    align-items: center;
+  }
+  .hero__eyebrow-accent {
+    flex: 0 0 auto;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 0.76rem;
+    line-height: 1;
+  }
+  .hero__eyebrow-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    font-size: clamp(0.54rem, 2.05vw, 0.68rem);
+    letter-spacing: 0.025em;
+    line-height: 1.15;
+  }
+
   .hero__headline {
     max-width: 100%;
-    font-size: clamp(2rem, 9vw, 2.6rem);
-    line-height: 1.08;
-    margin-bottom: 18px;
+    font-size: clamp(1.28rem, 5.2vw, 1.55rem);
+    line-height: 1.02;
+    margin-bottom: 9px;
   }
+
   .hero__description {
     max-width: 100%;
-    font-size: clamp(1rem, 4.4vw, 1.15rem);
-    line-height: 1.55;
-    margin-bottom: 24px;
+    font-size: clamp(0.67rem, 2.75vw, 0.8rem);
+    line-height: 1.28;
+    margin-bottom: 10px;
   }
-  .hero__actions { width: 100%; gap: 10px; }
+
+  .hero__actions {
+    width: 100%;
+    gap: 5px;
+  }
   .hero__btn-primary,
   .hero__btn-secondary {
     width: 100%;
-    min-height: 52px;
-    padding: 12px 18px;
-    box-sizing: border-box;
+    min-height: 36px;
+    padding: 6px 8px;
+    font-size: clamp(0.7rem, 2.7vw, 0.8rem);
+    border-radius: 7px;
   }
 
   .about-split,
@@ -87,6 +130,15 @@
     padding-bottom: calc(32px + env(safe-area-inset-bottom));
   }
 
+  .mobile-menu__close {
+    display: flex !important;
+    top: calc(18px + env(safe-area-inset-top));
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    z-index: 110;
+  }
+
   .gallery-modal {
     padding: max(10px, env(safe-area-inset-top))
              max(10px, env(safe-area-inset-right))
@@ -104,7 +156,7 @@
   .container { width: min(100%, calc(100% - (2 * var(--mobile-gutter)))); }
 
   /* MOBILE HOME HERO ONLY
-     Compact lower-left information composition.
+     Compact lower-right information composition.
      Desktop/laptop styles are untouched. */
   .hero {
     min-height: 78svh;
@@ -112,19 +164,18 @@
 
   .hero__container {
     min-height: 78svh;
-    position: relative;
-    display: block;
-    padding-top: calc(68px + env(safe-area-inset-top) + 12px);
-    padding-bottom: 0;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0 14px 58px;
   }
 
   .hero__content {
-    position: absolute;
-    left: 18px;
-    right: auto;
-    bottom: 72px;
-    width: min(280px, calc(100vw - 36px));
-    max-width: 280px;
+    position: static;
+    width: min(54%, 230px);
+    max-width: 230px;
     margin: 0;
     transform: translateX(-42px);
     opacity: 0;
@@ -134,38 +185,38 @@
   .hero__eyebrow-wrap {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 8px;
-    gap: 6px;
+    margin-bottom: 7px;
+    gap: 5px;
     align-items: center;
   }
   .hero__eyebrow-accent {
     flex: 0 0 auto;
     display: inline-block;
     white-space: nowrap;
-    font-size: 0.86rem;
+    font-size: 0.76rem;
     line-height: 1;
   }
   .hero__eyebrow-text {
     flex: 1 1 auto;
     min-width: 0;
     max-width: 100%;
-    font-size: clamp(0.62rem, 2.4vw, 0.76rem);
-    letter-spacing: 0.035em;
-    line-height: 1.18;
+    font-size: clamp(0.54rem, 2.05vw, 0.68rem);
+    letter-spacing: 0.025em;
+    line-height: 1.15;
   }
 
   .hero__headline {
     max-width: 100%;
-    font-size: clamp(1.58rem, 6.6vw, 1.85rem);
-    line-height: 1.03;
-    margin-bottom: 10px;
+    font-size: clamp(1.28rem, 5.2vw, 1.55rem);
+    line-height: 1.02;
+    margin-bottom: 9px;
   }
 
   .hero__description {
     max-width: 100%;
-    font-size: clamp(0.76rem, 3.25vw, 0.9rem);
-    line-height: 1.3;
-    margin-bottom: 11px;
+    font-size: clamp(0.67rem, 2.75vw, 0.8rem);
+    line-height: 1.28;
+    margin-bottom: 10px;
   }
 
   .hero__actions {
@@ -175,9 +226,9 @@
   .hero__btn-primary,
   .hero__btn-secondary {
     width: 100%;
-    min-height: 40px;
-    padding: 7px 10px;
-    font-size: clamp(0.78rem, 3.1vw, 0.9rem);
+    min-height: 36px;
+    padding: 6px 8px;
+    font-size: clamp(0.7rem, 2.7vw, 0.8rem);
   }
 
   /* Mobile-only crop: preserve the truck framing from the reference image. */
@@ -209,14 +260,12 @@
 @media (max-width: 360px) {
   :root { --mobile-gutter: 14px; }
   .hero { min-height: 78svh; }
-  .hero__container { min-height: 78svh; padding-bottom: 0; }
+  .hero__container { min-height: 78svh; padding: 0 12px 50px; }
   .hero__content {
-    left: 14px;
-    bottom: 58px;
-    width: min(258px, calc(100vw - 28px));
-    max-width: 258px;
+    width: min(56%, 205px);
+    max-width: 205px;
   }
-  .hero__eyebrow-text { font-size: 0.58rem; }
-  .hero__headline { max-width: 100%; font-size: 1.48rem; }
-  .hero__description { max-width: 100%; font-size: 0.74rem; }
+  .hero__eyebrow-text { font-size: 0.52rem; }
+  .hero__headline { max-width: 100%; font-size: 1.25rem; }
+  .hero__description { max-width: 100%; font-size: 0.65rem; }
 }
