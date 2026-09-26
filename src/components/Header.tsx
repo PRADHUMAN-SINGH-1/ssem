@@ -73,7 +73,7 @@ export function Header() {
             Get in Touch →
           </a>
           <button
-            className="header__hamburger"
+            className={`header__hamburger ${mobileOpen ? 'header__hamburger--open' : ''}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
