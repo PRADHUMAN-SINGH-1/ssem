@@ -256,6 +256,7 @@
     min-height: 100dvh;
     padding-top: calc(var(--header-height, 80px) + var(--space-lg));
     padding-bottom: var(--space-2xl);
+    overflow: visible;
   }
 
   /* Keep the truck/background framing exactly separate from the content layout. */
@@ -287,6 +288,8 @@
   }
 
   .hero__content {
+    position: relative;
+    top: 105px;
     width: min(47%, 340px);
     max-width: 340px;
     margin: 0;
