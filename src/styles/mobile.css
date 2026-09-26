@@ -1,0 +1,226 @@
+/*
+  SSEM Mobile Experience Layer
+  ----------------------------
+  Mobile-only adjustments. Desktop styles remain unchanged.
+*/
+
+@media (max-width: 768px) {
+  :root {
+    --mobile-gutter: 20px;
+  }
+
+  html {
+    scroll-padding-top: 84px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  .container {
+    width: min(100%, calc(100% - (2 * var(--mobile-gutter))));
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Fixed navigation: preserve the existing visual language while
+     respecting mobile browser safe areas. */
+  .header {
+    height: calc(72px + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .header__inner {
+    min-height: 72px;
+  }
+
+  .header__logo img {
+    max-height: 38px;
+    width: auto;
+  }
+
+  .header__hamburger {
+    flex-shrink: 0;
+  }
+
+  /* Hero: same content and artwork, but use the real small viewport
+     so Safari's changing browser chrome does not compress the layout. */
+  .hero {
+    min-height: 100svh;
+    align-items: flex-start;
+  }
+
+  .hero__container {
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: calc(72px + env(safe-area-inset-top) + 20px);
+    padding-bottom: 28px;
+  }
+
+  .hero__content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero__eyebrow-wrap {
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .hero__eyebrow-text {
+    max-width: calc(100vw - 76px);
+  }
+
+  .hero__headline {
+    max-width: 100%;
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    line-height: 1.08;
+    margin-bottom: 18px;
+  }
+
+  .hero__description {
+    max-width: 100%;
+    font-size: clamp(1rem, 4.4vw, 1.15rem);
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .hero__actions {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero__btn-primary,
+  .hero__btn-secondary {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 18px;
+    box-sizing: border-box;
+  }
+
+  /* Keep every mobile grid from forcing the viewport wider. */
+  .about-split,
+  .services__grid,
+  .capabilities__grid,
+  .project-status__stats,
+  .contact__grid,
+  .pre-footer-cta__box,
+  .footer__inner {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about-split__content,
+  .about-split__media,
+  .contact__info,
+  .contact-form,
+  .pre-footer-cta__box,
+  .stat-card,
+  .capability-item,
+  .service-card,
+  .gallery-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Comfortable touch targets without changing the component design. */
+  button,
+  a,
+  select,
+  input,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  .mobile-menu {
+    padding-top: calc(88px + env(safe-area-inset-top));
+    padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  }
+
+  .gallery-modal {
+    padding: max(10px, env(safe-area-inset-top))
+             max(10px, env(safe-area-inset-right))
+             max(10px, env(safe-area-inset-bottom))
+             max(10px, env(safe-area-inset-left));
+  }
+
+  .gallery-modal__dialog {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100svh - 20px);
+  }
+
+  .gallery-modal__top-nav {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .gallery-modal__caption-bar {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .project-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --mobile-gutter: 16px;
+  }
+
+  .container {
+    width: min(100%, calc(100% - (2 * var(--mobile-gutter))));
+  }
+
+  .hero__container {
+    padding-top: calc(68px + env(safe-area-inset-top) + 16px);
+    padding-bottom: 24px;
+  }
+
+  .hero__headline {
+    font-size: clamp(1.8rem, 8.5vw, 2.2rem);
+  }
+
+  .hero__description {
+    font-size: 1rem;
+  }
+
+  .hero__btn-primary,
+  .hero__btn-secondary {
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --mobile-gutter: 14px;
+  }
+
+  .hero__eyebrow-text {
+    font-size: 0.7rem;
+  }
+
+  .hero__headline {
+    font-size: 1.7rem;
+  }
+
+  .hero__description {
+    font-size: 0.96rem;
+  }
+}
