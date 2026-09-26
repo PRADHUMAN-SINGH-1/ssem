@@ -18,7 +18,7 @@ Official website and digital operations portal for **Shree Shyam Earthmovers LLP
 - **Styling**: Vanilla CSS (Variables, Flexbox, CSS Grid) + Lenis smooth-scrolling
 - **Icons**: `lucide-react`
 - **Linting**: `oxlint`
-- **Responsive layout**: Mobile viewport hardening while preserving the existing desktop design
+- **Responsive layout**: Dedicated mobile experience layer while preserving the existing desktop design
 
 ---
 
