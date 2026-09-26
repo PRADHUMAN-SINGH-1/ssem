@@ -1,0 +1,207 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(14, 18, 22, 0.75) 0%, rgba(14, 18, 22, 0.35) 60%, transparent 100%);
+  transition: background var(--transition-base, 0.3s ease), box-shadow var(--transition-base, 0.3s ease);
+}
+
+.header--scrolled {
+  background: rgba(14, 18, 22, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ─── Logo (No white box, clean transparent) ─────────────────── */
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.header__logo:hover {
+  opacity: 0.88;
+}
+
+.header__logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ─── Center Navigation ──────────────────────────────────────── */
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header__link {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 6px 0;
+}
+
+.header__link:hover {
+  color: #ffffff;
+}
+
+.header__link--active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Orange underline active indicator */
+.header__active-indicator {
+  position: absolute;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-orange, #f25900);
+  border-radius: 2px;
+}
+
+/* ─── Right CTA Button (Pill shape) ──────────────────────────── */
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--color-orange, #f25900);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 9999px; /* Pill shape */
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.header__cta-btn:hover {
+  background-color: #ff6811;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(242, 89, 0, 0.4);
+}
+
+.header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.header__hamburger:hover {
+  color: var(--color-orange, #f25900);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Mobile Menu Drawer ─────────────────────────────────────── */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(320px, 85vw);
+  height: 100vh;
+  height: 100dvh;
+  background-color: #14171a;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 101;
+  padding: 90px 24px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu--open {
+  transform: translateX(0);
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-menu__link {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link--active {
+  color: var(--color-orange, #f25900);
+  font-weight: 600;
+}
+
+.header__cta-btn--mobile {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* ─── Responsive Breakpoints ─────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__cta-btn {
+    display: none; /* Show in mobile drawer to save header space */
+  }
+
+  .header__cta-btn--mobile {
+    display: inline-flex;
+  }
+}

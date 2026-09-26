@@ -1,101 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SSEM LLP - Website currently under maintenance.">
-  <title>SSEM | Maintenance</title>
-  <link rel="icon" type="image/png" href="./ssem%20logo.png">
-  <style>
-    * { box-sizing: border-box; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    html, body {
-      min-height: 100%;
-      margin: 0;
-    }
+    <!-- SEO -->
+    <title>SSEM — Shree Shyam Earthmovers LLP | Full Transport Services, Fleet Logistics & Road Haulage</title>
+    <meta
+      name="description"
+      content="SSEM is a dedicated full transport service and commercial truck fleet logistics company providing road construction material haulage, highway supply logistics, and heavy plant mobilization across India."
+    />
 
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b1220;
-      color: #fff;
-    }
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SSEM | Full Transport Services, Fleet Logistics & Road Haulage" />
+    <meta
+      property="og:description"
+      content="Dedicated commercial transport services for road construction, highway infrastructure, bulk aggregate haulage, and heavy plant mobilization."
+    />
+    <meta property="og:image" content="/logo.png" />
 
-    .card {
-      width: min(860px, 100%);
-      padding: clamp(28px, 6vw, 64px) clamp(20px, 5vw, 48px);
-      text-align: center;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 24px;
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 20px 60px rgba(0,0,0,.30);
-    }
-
-    .logo {
-      display: block;
-      width: min(100%, 760px);
-      height: auto;
-      max-height: 45vh;
-      object-fit: contain;
-      margin: 0 auto 32px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(28px, 5vw, 44px);
-      line-height: 1.15;
-      letter-spacing: .5px;
-    }
-
-    .warning {
-      margin: 18px 0 10px;
-      font-size: clamp(18px, 3vw, 24px);
-      font-weight: 700;
-      line-height: 1.4;
-    }
-
-    .contact {
-      margin: 0;
-      font-size: clamp(16px, 2.5vw, 20px);
-      color: #cbd5e1;
-      line-height: 1.6;
-      overflow-wrap: anywhere;
-    }
-
-    .contact a {
-      color: inherit;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 520px) {
-      body {
-        padding: 14px;
-      }
-
-      .card {
-        border-radius: 18px;
-        padding: 28px 18px;
-      }
-
-      .logo {
-        margin-bottom: 24px;
-        max-height: 32vh;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main class="card">
-    <img class="logo" src="./ssem%20logo.png" alt="SSEM LLP logo">
-    <h1>SHREE SHYAM EARTHMOVERS LLP</h1>
-    <p class="warning">Currently Site is at Maintenance</p>
-    <p class="contact">
-      For assistance, contact
-      <a href="mailto:info@ssem.in">info@ssem.in</a>
-    </p>
-  </main>
-</body>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
