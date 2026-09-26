@@ -32,8 +32,6 @@
     padding-right: 0;
   }
 
-  /* Fixed navigation: preserve the existing visual language while
-     respecting mobile browser safe areas. */
   .header {
     height: calc(72px + env(safe-area-inset-top));
     padding-top: env(safe-area-inset-top);
@@ -52,8 +50,6 @@
     flex-shrink: 0;
   }
 
-  /* Hero: same content and artwork, but use the real small viewport
-     so Safari's changing browser chrome does not compress the layout. */
   .hero {
     min-height: 100svh;
     align-items: flex-start;
@@ -110,7 +106,6 @@
     box-sizing: border-box;
   }
 
-  /* Keep every mobile grid from forcing the viewport wider. */
   .about-split,
   .services__grid,
   .capabilities__grid,
@@ -135,7 +130,6 @@
     max-width: 100%;
   }
 
-  /* Comfortable touch targets without changing the component design. */
   button,
   a,
   select,
@@ -222,5 +216,39 @@
 
   .hero__description {
     font-size: 0.96rem;
+  }
+}
+
+/* Mobile home-page composition only. Desktop is untouched. */
+@media (max-width: 480px) {
+  .hero__content {
+    transform: translateY(-110px);
+  }
+
+  .hero__headline {
+    font-size: clamp(1.9rem, 8.8vw, 2.2rem);
+    line-height: 1.08;
+    margin-bottom: 18px;
+  }
+
+  .hero__description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+
+  .hero__btn-primary,
+  .hero__btn-secondary {
+    min-height: 52px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero__content {
+    transform: translateY(-90px);
+  }
+
+  .hero__headline {
+    font-size: 1.78rem;
   }
 }
