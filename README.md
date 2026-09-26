@@ -63,6 +63,10 @@ For detailed architecture, component structure, asset guidelines, and design con
 
 ---
 
+## 📱 Responsive Design
+
+The site preserves the desktop design while using mobile-only layout rules for compact screens, including viewport-safe hero spacing, touch-friendly controls, and navigation sizing.
+
 ## 📄 License
 
 All rights reserved © Shree Shyam Earthmovers LLP.
