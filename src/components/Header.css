@@ -157,6 +157,24 @@
   transform: translateX(0);
 }
 
+.mobile-menu__close {
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 2;
+}
+
 .mobile-menu__nav {
   display: flex;
   flex-direction: column;
@@ -192,6 +210,10 @@
   }
 
   .header__hamburger {
+    display: flex;
+  }
+
+  .mobile-menu__close {
     display: flex;
   }
 }
