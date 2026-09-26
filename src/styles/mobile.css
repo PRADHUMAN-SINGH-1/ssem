@@ -5,26 +5,11 @@
 */
 
 @media (max-width: 768px) {
-  :root {
-    --mobile-gutter: 20px;
-  }
+  :root { --mobile-gutter: 20px; }
 
-  html {
-    scroll-padding-top: 84px;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  body {
-    width: 100%;
-    min-width: 0;
-    overflow-x: hidden;
-  }
-
-  #root {
-    width: 100%;
-    min-width: 0;
-    overflow-x: clip;
-  }
+  html { scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+  body { width: 100%; min-width: 0; overflow-x: hidden; }
+  #root { width: 100%; min-width: 0; overflow-x: clip; }
 
   .container {
     width: min(100%, calc(100% - (2 * var(--mobile-gutter))));
@@ -36,25 +21,11 @@
     height: calc(72px + env(safe-area-inset-top));
     padding-top: env(safe-area-inset-top);
   }
+  .header__inner { min-height: 72px; }
+  .header__logo img { max-height: 38px; width: auto; }
+  .header__hamburger { flex-shrink: 0; }
 
-  .header__inner {
-    min-height: 72px;
-  }
-
-  .header__logo img {
-    max-height: 38px;
-    width: auto;
-  }
-
-  .header__hamburger {
-    flex-shrink: 0;
-  }
-
-  .hero {
-    min-height: 100svh;
-    align-items: flex-start;
-  }
-
+  .hero { min-height: 100svh; align-items: flex-start; }
   .hero__container {
     width: 100%;
     min-height: 100svh;
@@ -64,40 +35,22 @@
     padding-top: calc(72px + env(safe-area-inset-top) + 20px);
     padding-bottom: 28px;
   }
-
-  .hero__content {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .hero__eyebrow-wrap {
-    max-width: 100%;
-    margin-bottom: 16px;
-  }
-
-  .hero__eyebrow-text {
-    max-width: calc(100vw - 76px);
-  }
-
+  .hero__content { width: 100%; max-width: 100%; }
+  .hero__eyebrow-wrap { max-width: 100%; margin-bottom: 16px; }
+  .hero__eyebrow-text { max-width: calc(100vw - 76px); }
   .hero__headline {
     max-width: 100%;
     font-size: clamp(2rem, 9vw, 2.6rem);
     line-height: 1.08;
     margin-bottom: 18px;
   }
-
   .hero__description {
     max-width: 100%;
     font-size: clamp(1rem, 4.4vw, 1.15rem);
     line-height: 1.55;
     margin-bottom: 24px;
   }
-
-  .hero__actions {
-    width: 100%;
-    gap: 10px;
-  }
-
+  .hero__actions { width: 100%; gap: 10px; }
   .hero__btn-primary,
   .hero__btn-secondary {
     width: 100%;
@@ -112,10 +65,7 @@
   .project-status__stats,
   .contact__grid,
   .pre-footer-cta__box,
-  .footer__inner {
-    width: 100%;
-    min-width: 0;
-  }
+  .footer__inner { width: 100%; min-width: 0; }
 
   .about-split__content,
   .about-split__media,
@@ -125,18 +75,9 @@
   .stat-card,
   .capability-item,
   .service-card,
-  .gallery-card {
-    min-width: 0;
-    max-width: 100%;
-  }
+  .gallery-card { min-width: 0; max-width: 100%; }
 
-  button,
-  a,
-  select,
-  input,
-  textarea {
-    touch-action: manipulation;
-  }
+  button, a, select, input, textarea { touch-action: manipulation; }
 
   .mobile-menu {
     padding-top: calc(88px + env(safe-area-inset-top));
@@ -149,106 +90,63 @@
              max(10px, env(safe-area-inset-bottom))
              max(10px, env(safe-area-inset-left));
   }
-
-  .gallery-modal__dialog {
-    width: 100%;
-    max-width: 100%;
-    max-height: calc(100svh - 20px);
-  }
-
-  .gallery-modal__top-nav {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .gallery-modal__caption-bar {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .project-table-wrapper {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-  }
+  .gallery-modal__dialog { width: 100%; max-width: 100%; max-height: calc(100svh - 20px); }
+  .gallery-modal__top-nav { padding-left: 12px; padding-right: 12px; }
+  .gallery-modal__caption-bar { padding-left: 16px; padding-right: 16px; }
+  .project-table-wrapper { width: 100%; max-width: 100%; overflow-x: auto; }
 }
 
 @media (max-width: 480px) {
-  :root {
-    --mobile-gutter: 16px;
-  }
-
-  .container {
-    width: min(100%, calc(100% - (2 * var(--mobile-gutter))));
-  }
-
+  :root { --mobile-gutter: 16px; }
+  .container { width: min(100%, calc(100% - (2 * var(--mobile-gutter)))); }
   .hero__container {
     padding-top: calc(68px + env(safe-area-inset-top) + 16px);
     padding-bottom: 24px;
   }
 
-  .hero__headline {
-    font-size: clamp(1.8rem, 8.5vw, 2.2rem);
+  /* Mobile home hero only: compact, left-aligned and visually contained. */
+  .hero__content {
+    width: calc(100% - 24px);
+    max-width: 350px;
+    margin-left: 12px;
+    margin-right: auto;
+    transform: none;
   }
 
-  .hero__description {
-    font-size: 1rem;
+  .hero__eyebrow-wrap {
+    width: 100%;
+    max-width: 330px;
+    margin-bottom: 14px;
+    gap: 7px;
   }
-
-  .hero__btn-primary,
-  .hero__btn-secondary {
-    min-height: 50px;
-  }
-}
-
-@media (max-width: 360px) {
-  :root {
-    --mobile-gutter: 14px;
-  }
-
   .hero__eyebrow-text {
-    font-size: 0.7rem;
+    max-width: 300px;
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    line-height: 1.35;
   }
 
   .hero__headline {
-    font-size: 1.7rem;
-  }
-
-  .hero__description {
-    font-size: 0.96rem;
-  }
-}
-
-/* Mobile home-page composition only. Desktop is untouched. */
-@media (max-width: 480px) {
-  .hero__content {
-    transform: translateY(-110px);
-  }
-
-  .hero__headline {
-    font-size: clamp(1.9rem, 8.8vw, 2.2rem);
+    max-width: 340px;
+    font-size: clamp(1.82rem, 8.4vw, 2.12rem);
     line-height: 1.08;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
-
   .hero__description {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 22px;
+    max-width: 340px;
+    font-size: 0.98rem;
+    line-height: 1.48;
+    margin-bottom: 20px;
   }
-
+  .hero__actions { width: 100%; gap: 9px; }
   .hero__btn-primary,
-  .hero__btn-secondary {
-    min-height: 52px;
-  }
+  .hero__btn-secondary { min-height: 50px; padding: 11px 16px; }
 }
 
 @media (max-width: 360px) {
-  .hero__content {
-    transform: translateY(-90px);
-  }
-
-  .hero__headline {
-    font-size: 1.78rem;
-  }
+  :root { --mobile-gutter: 14px; }
+  .hero__content { width: calc(100% - 18px); margin-left: 9px; }
+  .hero__eyebrow-text { font-size: 0.68rem; }
+  .hero__headline { max-width: 310px; font-size: 1.7rem; }
+  .hero__description { max-width: 310px; font-size: 0.94rem; }
 }
