@@ -104,8 +104,8 @@
   .container { width: min(100%, calc(100% - (2 * var(--mobile-gutter)))); }
 
   /* MOBILE HOME HERO ONLY
-     Place the complete information block inside the requested
-     lower-left mobile area. Desktop/laptop styles are untouched. */
+     Compact lower-left information composition.
+     Desktop/laptop styles are untouched. */
   .hero {
     min-height: 78svh;
   }
@@ -120,13 +120,13 @@
 
   .hero__content {
     position: absolute;
-    left: 24px;
+    left: 18px;
     right: auto;
-    bottom: 54px;
-    width: calc(100vw - 72px);
-    max-width: 340px;
+    bottom: 72px;
+    width: min(280px, calc(100vw - 36px));
+    max-width: 280px;
     margin: 0;
-    transform: translateX(-48px);
+    transform: translateX(-42px);
     opacity: 0;
     animation: ssemMobileHeroSlideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
   }
@@ -134,50 +134,50 @@
   .hero__eyebrow-wrap {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 10px;
-    gap: 8px;
+    margin-bottom: 8px;
+    gap: 6px;
     align-items: center;
   }
   .hero__eyebrow-accent {
     flex: 0 0 auto;
     display: inline-block;
     white-space: nowrap;
-    font-size: 1rem;
+    font-size: 0.86rem;
     line-height: 1;
   }
   .hero__eyebrow-text {
     flex: 1 1 auto;
     min-width: 0;
     max-width: 100%;
-    font-size: clamp(0.72rem, 2.8vw, 0.9rem);
-    letter-spacing: 0.04em;
-    line-height: 1.22;
+    font-size: clamp(0.62rem, 2.4vw, 0.76rem);
+    letter-spacing: 0.035em;
+    line-height: 1.18;
   }
 
   .hero__headline {
     max-width: 100%;
-    font-size: clamp(1.8rem, 7.5vw, 2.5rem);
-    line-height: 1.04;
-    margin-bottom: 13px;
+    font-size: clamp(1.58rem, 6.6vw, 1.85rem);
+    line-height: 1.03;
+    margin-bottom: 10px;
   }
 
   .hero__description {
     max-width: 100%;
-    font-size: clamp(0.9rem, 3.8vw, 1.12rem);
-    line-height: 1.35;
-    margin-bottom: 14px;
+    font-size: clamp(0.76rem, 3.25vw, 0.9rem);
+    line-height: 1.3;
+    margin-bottom: 11px;
   }
 
   .hero__actions {
     width: 100%;
-    gap: 6px;
+    gap: 5px;
   }
   .hero__btn-primary,
   .hero__btn-secondary {
     width: 100%;
-    min-height: 44px;
-    padding: 8px 12px;
-    font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+    min-height: 40px;
+    padding: 7px 10px;
+    font-size: clamp(0.78rem, 3.1vw, 0.9rem);
   }
 
   /* Mobile-only crop: preserve the truck framing from the reference image. */
@@ -190,7 +190,7 @@
 @keyframes ssemMobileHeroSlideIn {
   from {
     opacity: 0;
-    transform: translateX(-48px);
+    transform: translateX(-42px);
   }
   to {
     opacity: 1;
@@ -211,12 +211,12 @@
   .hero { min-height: 78svh; }
   .hero__container { min-height: 78svh; padding-bottom: 0; }
   .hero__content {
-    left: 18px;
-    bottom: 48px;
-    width: calc(100vw - 54px);
-    max-width: 310px;
+    left: 14px;
+    bottom: 58px;
+    width: min(258px, calc(100vw - 28px));
+    max-width: 258px;
   }
-  .hero__eyebrow-text { font-size: 0.68rem; }
-  .hero__headline { max-width: 100%; font-size: 1.72rem; }
-  .hero__description { max-width: 100%; font-size: 0.88rem; }
+  .hero__eyebrow-text { font-size: 0.58rem; }
+  .hero__headline { max-width: 100%; font-size: 1.48rem; }
+  .hero__description { max-width: 100%; font-size: 0.74rem; }
 }
