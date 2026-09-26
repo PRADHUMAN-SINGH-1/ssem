@@ -85,6 +85,14 @@ export function Header() {
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`}>
+        <button
+          type="button"
+          className="mobile-menu__close"
+          onClick={() => setMobileOpen(false)}
+          aria-label="Close menu"
+        >
+          <X size={28} />
+        </button>
         <nav className="mobile-menu__nav" aria-label="Mobile navigation">
           {navigation.map((item) => (
             <a
