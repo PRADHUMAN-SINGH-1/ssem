@@ -242,13 +242,7 @@
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
-    align-items: flex-start;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .hero__container {
-    padding-top: clamp(9rem, 20dvh, 11rem);
+    padding-top: calc(var(--header-height, 80px) + var(--space-lg));
     padding-bottom: var(--space-2xl);
   }
 
@@ -283,22 +277,19 @@
   .hero__actions {
     flex-direction: column;
     width: 100%;
-    gap: 12px;
   }
 
   .hero__btn-primary,
   .hero__btn-secondary {
     width: 100%;
-    min-height: 52px;
     justify-content: center;
-    padding: 12px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero__container {
-    padding-top: clamp(8rem, 18dvh, 9.5rem);
-    padding-bottom: var(--space-xl);
+  .hero {
+    padding-top: calc(var(--header-height, 80px) + var(--space-md));
+    padding-bottom: var(--space-2xl);
   }
 
   .hero__poster,
