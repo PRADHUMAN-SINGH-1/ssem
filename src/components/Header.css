@@ -227,7 +227,7 @@
     display: inline-flex;
   }
 
-  /* Mobile-only: keep the close control above the drawer. */
+  /* Mobile-only: keep the close control above the drawer and inside the safe area. */
   .header.header--menu-open {
     z-index: 102;
     background: transparent;
@@ -245,5 +245,14 @@
     z-index: 103;
     color: #ffffff;
     background: transparent;
+  }
+
+  .mobile-menu__close {
+    display: flex !important;
+    top: calc(18px + env(safe-area-inset-top));
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    z-index: 110;
   }
 }
