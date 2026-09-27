@@ -100,7 +100,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#contact-form"
             className="header__cta-btn header__cta-btn--mobile"
             onClick={() => setMobileOpen(false)}
           >

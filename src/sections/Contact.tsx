@@ -61,7 +61,7 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="contact__form-col reveal stagger-1">
+        <div id="contact-form" className="contact__form-col reveal stagger-1">
           <ContactForm />
         </div>
       </div>
