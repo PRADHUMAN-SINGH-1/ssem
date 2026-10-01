@@ -120,8 +120,7 @@ export function Footer() {
             <span>Registered in Madhya Pradesh, India</span>
           </div>
           <div className="footer__legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Engagement</a>
+            <a href="/Privacy%20Policy.pdf">Privacy Policy</a>
             <button
               onClick={scrollToTop}
               className="footer__back-to-top"
